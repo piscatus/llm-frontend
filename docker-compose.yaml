@@ -1,16 +1,16 @@
 services:
   openwebui:
-    image: ghcr.io/open-webui/open-webui:0.6.41
     container_name: openwebui
-    restart: unless-stopped
-    ports:
-      - "3000:8080"
-    environment:
-      - OLLAMA_BASE_URL=http://ollama:11434
-    volumes:
-      - ./data:/app/backend/data
+    env_file:
+      - .env
+    image: ghcr.io/open-webui/open-webui:0.6.41
     networks:
       - ai-net
+    ports:
+      - "3000:8080"
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/backend/data
 
 networks:
   ai-net:
