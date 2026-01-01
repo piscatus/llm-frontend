@@ -4,7 +4,7 @@ services:
     cpus: "1.0"
     env_file:
       - .env
-    image: dyrnq/open-webui:v0.3.27-cuda
+    image: ghcr.io/open-webui/open-webui:0.6.41
     mem_limit: 4g
     networks:
       - ai-net
